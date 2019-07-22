@@ -5,7 +5,7 @@ A dart package to check if card number is valid and also returns card type as we
 # Installing
 1. Add dependency to `pubspec.yaml`
 
-    *Get the current version in the 'Versions' tab on https://pub.dev/*
+    *Get the current version in the 'Versions' tab on https://pub.dev/packages/credit_card_number_validator/versions*
 ```
 dependencies:
     credit_card_number_validator: *current-version*
@@ -24,7 +24,6 @@ A basic example
     bool isValid = cardData[CreditCardValidator.isValidCard];
 
 ```
-
 # Features
 * Supported cards:
   * Visa
