@@ -1,4 +1,4 @@
-# credit_card_validator
+# credit_card_number_validator
 
 A dart package to check if card number is valid and also returns card type as well.
 
