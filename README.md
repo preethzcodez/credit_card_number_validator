@@ -2,13 +2,41 @@
 
 A dart package to check if card number is valid and also returns card type as well.
 
-## Getting Started
+# Installing
+1. Add dependency to `pubspec.yaml`
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+    *Get the current version in the 'Versions' tab on https://pub.dev/*
+```
+dependencies:
+    credit_card_number_validator: *current-version*
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+2. Import the package
+```
+import 'package:credit_card_number_validator/credit_card_number_validator.dart';
+```
+
+#  Usage
+A basic example
+
+    Map<String, dynamic> cardData = CreditCardValidator.getCard(cardNumberString);
+    String cardType = cardData[CreditCardValidator.cardType];
+    bool isValid = cardData[CreditCardValidator.isValidCard];
+
+```
+
+# Features
+* Supported cards:
+  * Visa
+  * Mastercard
+  * American Express
+  * Discover
+  * Diners Club
+  * JCB
+
+
+# Author
+Preeth Prathapan - *Creator and repo owner* - [Github Profile](https://github.com/preethzcodez)
+
+# License
+This project is licensed under the MIT License - see the [LICENSE file](LICENSE) for more details
