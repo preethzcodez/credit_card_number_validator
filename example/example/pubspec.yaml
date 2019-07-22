@@ -20,7 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  credit_card_validator:
+  credit_card_number_validator:
     path: ../../
 
   # The following adds the Cupertino Icons font to your application.

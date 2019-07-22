@@ -29,7 +29,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.11"
-  credit_card_validator:
+  credit_card_number_validator:
     dependency: "direct main"
     description:
       path: "../.."

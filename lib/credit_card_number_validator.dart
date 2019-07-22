@@ -1,4 +1,4 @@
-library credit_card_validator;
+library credit_card_number_validator;
 
 class CreditCardValidator {
   static const String _VISA = "^4[0-9]{12}(?:[0-9]{3})?\$";
