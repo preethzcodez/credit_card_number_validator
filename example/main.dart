@@ -9,15 +9,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyApp extends State<MyApp> {
+  /// Card Number Controller
   TextEditingController _cardNumberController = TextEditingController();
 
+  // Declare Variables To Store Card Type and Validity
   String cardType;
   bool isValid = false;
 
+  // Initial State
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+
+    // Set A Sample Card Value - VISA Card
     _cardNumberController.text = "4111111111111111";
   }
 
@@ -69,9 +74,11 @@ class _MyApp extends State<MyApp> {
                 child: Text('Get Card Data',
                     style: TextStyle(color: Colors.white, fontSize: 18.0)),
                 onPressed: () {
+                  // Get Card Type and Validity Data As Map - @param Card Number
                   Map<String, dynamic> cardData =
                       CreditCardValidator.getCard(_cardNumberController.text);
                   setState(() {
+                    // Set Card Type and Validity
                     cardType = cardData[CreditCardValidator.cardType];
                     isValid = cardData[CreditCardValidator.isValidCard];
                   });
@@ -81,8 +88,8 @@ class _MyApp extends State<MyApp> {
             Padding(
               padding: EdgeInsets.all(20),
               child: cardType != null
-                  ? Text(
-                      'Card Type : $cardType \nCard Number Valid: $isValid',
+                  // Display Card Type and Validity
+                  ? Text('Card Type : $cardType \nCard Number Valid: $isValid',
                       style: TextStyle(
                           color: isValid ? Colors.green : Colors.red,
                           fontSize: 14.0,

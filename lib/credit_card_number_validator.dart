@@ -1,6 +1,7 @@
 library credit_card_number_validator;
 
 class CreditCardValidator {
+  /// Set RegEx For All Cards
   static const String _VISA = "^4[0-9]{12}(?:[0-9]{3})?\$";
   static const String _MASTERCARD =
       "^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}\$";
@@ -9,9 +10,11 @@ class CreditCardValidator {
   static const String _DINERS = "^3(?:0[0-5]|[68][0-9])[0-9]{11}\$";
   static const String _JCB = "^(?:2131|1800|35\d{3})\d{11}\$";
 
+  /// Set Map Key
   static const String cardType = "CardType";
   static const String isValidCard = "IsValidCard";
 
+  /// Add RegEx Cards Into List
   static const List<String> regexList = [
     _VISA,
     _MASTERCARD,
@@ -21,6 +24,7 @@ class CreditCardValidator {
     _JCB
   ];
 
+  /// Set Card Types List
   static const List<String> _cardTypesList = [
     "VISA",
     "MASTERCARD",
@@ -30,6 +34,7 @@ class CreditCardValidator {
     "JCB"
   ];
 
+  /// Combined RegEx
   static RegExp _regex = new RegExp("^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" +
       "(?<mastercard>5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}" +
       "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" +
@@ -37,6 +42,7 @@ class CreditCardValidator {
       "(?<diners>3(?:0[0-5]|[68][0-9])[0-9]{11})|" +
       "(?<jcb>(?:2131|1800|35\d{3})\d{11}))\$");
 
+  // Get Card Data - Card Type and isValid Number as Map
   static Map<String, dynamic> getCard(String cardNumber) {
     String _cardType = _getCardType(cardNumber);
     bool isValid = _isCardValid(_cardType, cardNumber);
@@ -47,6 +53,7 @@ class CreditCardValidator {
     return cardData;
   }
 
+  // Get Card Type Based On RegEx
   static String _getCardType(String cardNumber) {
     if (_regex.hasMatch(cardNumber)) {
       for (int i = 0; i < regexList.length; i++) {
@@ -59,6 +66,7 @@ class CreditCardValidator {
     return "UNKNOWN";
   }
 
+  // Check Card Number Validity - Luhn Algorithm
   static bool _isCardValid(String cardType, String ccNumber) {
     if (cardType == "UNKNOWN" || cardType.trim().length == 0) return false;
 

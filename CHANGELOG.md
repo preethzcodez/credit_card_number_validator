@@ -1,3 +1,7 @@
+## [1.0.0] - July 23, 2019
+* Stable Build
+* Added Documentation
+
 ## [0.0.2] - July 22, 2019
 * Updated README.md
 
