@@ -1,6 +1,6 @@
 name: credit_card_number_validator
 description: A dart package to check if card number is valid and also returns card type as well.
-version: 1.0.2
+version: 1.0.3
 author: Preeth Prathapan<preethzcodez.dll@gmail.com>
 homepage: https://github.com/preethzcodez/credit_card_number_validator.git
 
