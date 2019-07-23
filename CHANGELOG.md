@@ -1,3 +1,6 @@
+## [1.0.4] - July 23, 2019
+* Fixed Issue With MasterCard & JCB
+
 ## [1.0.3] - July 23, 2019
 * Updated README.md
 

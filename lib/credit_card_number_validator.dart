@@ -8,7 +8,7 @@ class CreditCardValidator {
   static const String _DISCOVER = "^6(?:011|5[0-9]{2})[0-9]{12}\$";
   static const String _AMEX = "^3[47][0-9]{13}\$";
   static const String _DINERS = "^3(?:0[0-5]|[68][0-9])[0-9]{11}\$";
-  static const String _JCB = "^(?:2131|1800|35\d{3})\d{11}\$";
+  static const String _JCB = "^(?:2131|2100|1800|3\\d{4})\\d{11}\$";
 
   /// Set Map Key
   static const String cardType = "CardType";
@@ -36,11 +36,11 @@ class CreditCardValidator {
 
   /// Combined RegEx
   static RegExp _regex = new RegExp("^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" +
-      "(?<mastercard>5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}" +
+      "(?<mastercard>5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|" +
       "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" +
       "(?<amex>3[47][0-9]{13})|" +
       "(?<diners>3(?:0[0-5]|[68][0-9])[0-9]{11})|" +
-      "(?<jcb>(?:2131|1800|35\d{3})\d{11}))\$");
+      "(?<jcb>(?:2131|2100|1800|3\\d{4})\\d{11}))\$");
 
   // Get Card Data - Card Type and isValid Number as Map
   static Map<String, dynamic> getCard(String cardNumber) {
