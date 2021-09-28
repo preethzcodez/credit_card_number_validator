@@ -3,12 +3,17 @@ library credit_card_number_validator;
 class CreditCardValidator {
   /// Set RegEx For All Cards
   static const String _VISA = "^4[0-9]{12}(?:[0-9]{3})?\$";
+
   static const String _MASTERCARD =
       "^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}\$";
   static const String _DISCOVER = "^6(?:011|5[0-9]{2})[0-9]{12}\$";
   static const String _AMEX = "^3[47][0-9]{13}\$";
   static const String _DINERS = "^3(?:0[0-5]|[68][0-9])[0-9]{11}\$";
   static const String _JCB = "^(?:2131|2100|1800|3\\d{4})\\d{11}\$";
+  static const String _ELO =
+      "^((((636368)|(438935)|(504175)|(451416)|(636297))\\d{0,10})|((5067)|(4576)|(4011))\\d{0,12})\$";
+  static const String _AURA = "^(5078\\d{2})(\\d{2})(\\d{11})\$";
+  static const String _HIPERCARD = "^(606282\\d{10}(\\d{3})?)|(3841\\d{15})\$";
 
   /// Set Map Key
   static const String cardType = "CardType";
@@ -21,7 +26,10 @@ class CreditCardValidator {
     _DISCOVER,
     _AMEX,
     _DINERS,
-    _JCB
+    _JCB,
+    _ELO,
+    _AURA,
+    _HIPERCARD
   ];
 
   /// Set Card Types List
@@ -31,7 +39,10 @@ class CreditCardValidator {
     "DISCOVER",
     "AMEX",
     "DINERS",
-    "JCB"
+    "JCB",
+    "ELO",
+    "AURA",
+    "HIPERCARD"
   ];
 
   /// Combined RegEx
@@ -40,7 +51,11 @@ class CreditCardValidator {
       "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" +
       "(?<amex>3[47][0-9]{13})|" +
       "(?<diners>3(?:0[0-5]|[68][0-9])[0-9]{11})|" +
-      "(?<jcb>(?:2131|2100|1800|3\\d{4})\\d{11}))\$");
+      "(?<jcb>(?:2131|2100|1800|3\\d{4})\\d{11}))|" +
+      "(?<elo>((((636368)|(438935)|(504175)|(451416)|(636297))\\d{0,10})|((5067)|(4576)|(4011))\\d{0,12}))|" +
+      "(?<aura>(5078\\d{2})(\\d{2})(\\d{11}))|" +
+      "(?<hipercard>(606282\\d{10}(\\d{3})?)|(3841\\d{15}))" +
+      "\$");
 
   // Get Card Data - Card Type and isValid Number as Map
   static Map<String, dynamic> getCard(String cardNumber) {
