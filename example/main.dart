@@ -13,8 +13,8 @@ class _MyApp extends State<MyApp> {
   TextEditingController _cardNumberController = TextEditingController();
 
   // Declare Variables To Store Card Type and Validity
-  String cardType;
-  bool isValid = false;
+  String? cardType;
+  bool? isValid = false;
 
   // Initial State
   @override
@@ -91,7 +91,7 @@ class _MyApp extends State<MyApp> {
                   // Display Card Type and Validity
                   ? Text('Card Type : $cardType \nCard Number Valid: $isValid',
                       style: TextStyle(
-                          color: isValid ? Colors.green : Colors.red,
+                          color: isValid! ? Colors.green : Colors.red,
                           fontSize: 14.0,
                           fontWeight: FontWeight.w800))
                   : Text(' \n '),

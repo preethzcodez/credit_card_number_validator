@@ -5,7 +5,7 @@ author: Preeth Prathapan<preethzcodez.dll@gmail.com>
 homepage: https://github.com/preethzcodez/credit_card_number_validator.git
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
